@@ -306,15 +306,200 @@
 
 # filter_messages(messages)
 ################################################################################
-def double_string(string):
-    doubled = ""
-    for char in string:
-        doubled += char * 2
-    return doubled
+# def double_string(string):
+#     doubled = ""
+#     for char in string:
+#         doubled += char * 2
+#     return doubled
+
+
+# # Don't touch below this line
+
+# print(double_string("Hello there"))
+# print(double_string("General Kenobi"))
+# print(double_string("I've been trained in your Jedi arts"))
+################################################################################
+# def is_prime(number):
+#     if number < 2:
+#         return False
+#     for i in range(2, number):
+#         if number % i == 0:
+#             return False
+
+#     return True
+
+# # Don't touch below this line
+
+
+# for i in range(0, 25):
+#     print(f"{i} is prime: {is_prime(i)}")
+################################################################################
+def test_score(answer_sheet, student_answers):
+    count = 0
+    percentage = 0.0
+    name = student_answers[0]
+    for i in range(len(answer_sheet)):
+        if answer_sheet[i] == (student_answers[i + 1]):
+            count += 1
+    percentage = count / len(answer_sheet) * 100
+    return name, percentage
 
 
 # Don't touch below this line
 
-print(double_string("Hello there"))
-print(double_string("General Kenobi"))
-print(double_string("I've been trained in your Jedi arts"))
+
+def test(answer_sheet, student_1_answers):
+    name, percentage = test_score(answer_sheet, student_1_answers)
+    print(f"{name}: {percentage:.1f}%")
+
+
+def main():
+    answer_sheet = [
+        "A",
+        "A",
+        "C",
+        "D",
+        "D",
+        "B",
+        "C",
+        "A",
+        "C",
+        "B",
+        "A",
+        "D",
+        "C",
+        "B",
+        "D",
+        "C",
+        "B",
+        "A",
+        "D",
+        "A",
+    ]
+    student_1_answers = [
+        "Allan",
+        "A",
+        "C",
+        "C",
+        "B",
+        "D",
+        "B",
+        "C",
+        "A",
+        "C",
+        "B",
+        "A",
+        "A",
+        "C",
+        "B",
+        "D",
+        "C",
+        "B",
+        "A",
+        "D",
+        "A",
+    ]
+    student_2_answers = [
+        "John",
+        "A",
+        "D",
+        "A",
+        "A",
+        "D",
+        "A",
+        "C",
+        "B",
+        "D",
+        "A",
+        "F",
+        "A",
+        "C",
+        "B",
+        "D",
+        "C",
+        "D",
+        "C",
+        "D",
+        "A",
+    ]
+    student_3_answers = [
+        "Jeremy",
+        "A",
+        "B",
+        "D",
+        "C",
+        "D",
+        "B",
+        "D",
+        "A",
+        "C",
+        "C",
+        "D",
+        "A",
+        "C",
+        "B",
+        "D",
+        "C",
+        "B",
+        "A",
+        "F",
+        "A",
+    ]
+    student_4_answers = [
+        "Sally",
+        "A",
+        "A",
+        "D",
+        "A",
+        "A",
+        "B",
+        "C",
+        "A",
+        "C",
+        "B",
+        "A",
+        "A",
+        "C",
+        "B",
+        "D",
+        "C",
+        "F",
+        "A",
+        "D",
+        "A",
+    ]
+    student_5_answers = [
+        "Tim",
+        "A",
+        "A",
+        "C",
+        "D",
+        "D",
+        "B",
+        "C",
+        "A",
+        "C",
+        "B",
+        "A",
+        "D",
+        "C",
+        "B",
+        "D",
+        "C",
+        "B",
+        "A",
+        "D",
+        "A",
+    ]
+
+    test(answer_sheet, student_1_answers)
+    test(answer_sheet, student_2_answers)
+    test(answer_sheet, student_3_answers)
+    test(answer_sheet, student_4_answers)
+    test(answer_sheet, student_5_answers)
+
+
+main()
+
+
+################################################################################
