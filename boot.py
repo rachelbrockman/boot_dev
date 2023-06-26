@@ -221,26 +221,100 @@
 # test(["now!", "order", "reverse", "in", "is", "Array", "This"])
 # test(["Kite Shield", "Iron Breastplate", "Healing Potion", "Shortsword"])
 ################################################################################
-messages = [
-    "well dang it",
-    "dang the whole dang thing",
-    "kill that knight, dang it",
-    "get him!",
-    "donkey kong",
-    "oh come on, get them",
-    "run away from the dang baddies",
-]
+# messages = [
+#     "well dang it",
+#     "dang the whole dang thing",
+#     "kill that knight, dang it",
+#     "get him!",
+#     "donkey kong",
+#     "oh come on, get them",
+#     "run away from the dang baddies",
+# ]
+
+# separator = "\n#################\n"
 
 
-def filter_messages(messages):
-    clean_message = []
-    dang_counter = 0
-    clean_words = []
-    words = [string.split() for string in messages]
-    print words
-    # filtered_words = filter_messages(messages)
-    # print(filtered_words)
+# def filter_messages(messages):  # messages = list of strings
+#     # create the 2 empty lists that you'll return at the end
+#     clean_messages = []  # ["well it", "the whole thing", ...]
+#     removed_words = []  # [ 1, 2, 1, 0, 0, 0, 1 ]
+#     for message in messages:  # message = string
+#         words = message.split()  # split string into list of strings
+#         # new_words is a temporary list so
+#         # we can add words if they are or are not "dang"
+#         new_words = ""
+#         removed = 0  # count of "dang"s in a given list (words)
+#         for word in words:  # loop through the words
+#             if word == "dang":
+#                 removed += 1  # increment removed count
+#             else:
+#                 new_words += word
+#                 new_words += " "  # append new word to new words
+#             # join messages with a space between
+#             # add count to the second output list
 
-    if filtered_words == "dang":
-        dang_counter += 1
-        print(dang_counter)
+#         removed_words.append(removed)
+#         clean_messages.append(new_words.strip())
+#     # return syntax for multiple values
+#     # print(f"messages: {messages}")
+#     # print(separator)
+#     # print(f"clean_messages: {clean_messages}")
+#     # print(separator)
+#     # print(f"removed_words: {removed_words}")
+#     # print(separator)
+
+#     return clean_messages, removed_words
+
+
+# def filter_messages(messages):
+#     clean_messages = []
+#     removed_words = []
+#     for message in messages:
+#         words = message.split()
+#         new_words = ""
+#         removed = 0
+#         for word in words:
+#             if word == "dang":
+#                 removed += 1
+#             else:
+#                 new_words += word
+#                 new_words += " "
+
+#     removed_words.append(removed)
+#     clean_messages.append(new_words.strip())
+#     return clean_messages, removed_words
+# look at each individual word to see if it is dang
+
+# clean_message = [string.join(clean_words) for string in messages]
+# print(clean_message)  # i added this
+# dang_counter = 0
+# clean_words = []
+# words = [string.split() for string in messages]
+# print("Words", words)
+
+# for word_list in words:
+#     if "dang" in word_list:
+#         dang_counter += 1
+#         clean_words = word_list.remove("dang")
+#         print("Word List", word_list)
+#         clean_message.append(clean_words)
+#         print(clean_message)
+
+# print("Bad words:", dang_counter)
+# print(messages)
+
+
+# filter_messages(messages)
+################################################################################
+def double_string(string):
+    doubled = ""
+    for char in string:
+        doubled += char * 2
+    return doubled
+
+
+# Don't touch below this line
+
+print(double_string("Hello there"))
+print(double_string("General Kenobi"))
+print(double_string("I've been trained in your Jedi arts"))
