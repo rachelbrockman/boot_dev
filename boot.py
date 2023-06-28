@@ -502,6 +502,7 @@
 # main()
 
 
+# DICTIONARIES
 # ################################################################################
 def get_character_record(name, server, level, rank):
     my_dictionary = {
@@ -538,3 +539,86 @@ def print_rec(rec):
 
 
 main()
+
+
+#################################################################################
+def count_enemies(enemy_names):
+    jackal_count = 0
+    kobold_count = 0
+    soldier_count = 0
+    gremlin_count = 0
+
+    for enemy in enemy_names:
+        if enemy == "jackal":
+            jackal_count += 1
+        elif enemy == "kobold":
+            kobold_count += 1
+        elif enemy == "soldier":
+            soldier_count += 1
+        else:
+            gremlin_count += 1
+    enemies = {
+        "jackal": jackal_count,
+        "kobold": kobold_count,
+        "soldier": soldier_count,
+        "gremlin": gremlin_count,
+    }
+    # return jackal_count, kobold_count, soldier_count, gremlin_count
+    return enemies
+
+
+# Don't edit below this line
+
+
+def main():
+    print(
+        count_enemies(
+            [
+                "jackal",
+                "kobold",
+                "jackal",
+                "kobold",
+                "soldier",
+                "kobold",
+                "soldier",
+                "soldier",
+                "jackal",
+                "jackal",
+                "gremlin",
+                "jackal",
+                "jackal",
+            ]
+        )
+    )
+
+
+main()
+#################################################################################
+# Ch 8
+{
+    "type": {
+        "student": {
+            "name": "Allan",
+            "courses": {
+                "math_1050": {
+                    "current_grade": "B",
+                },
+                "English_1010": {
+                    "current_grade": "A-",
+                },
+            },
+        }
+    }
+}
+
+
+def get_english_grade(student):
+    courses = student["type"]["student"]["courses"]
+    if "English_1010" in courses:
+        return courses["English_1010"]["current_grade"]
+    else:
+        return None
+
+
+def get_english_grade(student):
+    return student["type"]["student"]["courses"]["English_1010"]["current_grade"]
