@@ -711,29 +711,31 @@
 
 
 # # ################################################################################
-def find_missing_ids(first_ids, second_ids):
-    diff = list(first_ids)
+# def find_missing_ids(first_ids, second_ids):
+#     diff = list(first_ids)
 
-    for el in second_ids:
-        if el not in diff:
-            diff.remove(el)
-        return diff
-
-
-# Don't touch below this line
+#     for el in second_ids:
+#         if el not in diff:
+#             diff.remove(el)
+#         return diff
 
 
-def test(first_ids, second_ids):
-    ids = sorted(find_missing_ids(first_ids, second_ids))
-    print(f"Customers with these ids were only in the first list:")
-    for id in ids:
-        print(f"- {id}")
-    print("---")
+# # Don't touch below this line
 
 
-test([1, 1, 1, 2, 2, 2, 3], [1, 2])
-test([1, 2, 2, 3, 4, 3, 4, 5, 6, 7, 8, 9, 9, 10], [1, 2, 2, 3, 4, 5, 6, 7, 8])
-test(
-    [1, 2, 2, 3, 4, 3, 4, 5, 6, 7, 8, 9, 9, 10, 11, 12, 13, 15, 18],
-    [1, 2, 2, 3, 4, 5, 6, 7, 8, 100, 101, 103],
-)
+# def test(first_ids, second_ids):
+#     ids = sorted(find_missing_ids(first_ids, second_ids))
+#     print(f"Customers with these ids were only in the first list:")
+#     for id in ids:
+#         print(f"- {id}")
+#     print("---")
+
+
+# test([1, 1, 1, 2, 2, 2, 3], [1, 2])
+# test([1, 2, 2, 3, 4, 3, 4, 5, 6, 7, 8, 9, 9, 10], [1, 2, 2, 3, 4, 5, 6, 7, 8])
+# test(
+#     [1, 2, 2, 3, 4, 3, 4, 5, 6, 7, 8, 9, 9, 10, 11, 12, 13, 15, 18],
+#     [1, 2, 2, 3, 4, 5, 6, 7, 8, 100, 101, 103],
+# )
+
+# # ################################################################################
