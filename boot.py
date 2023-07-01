@@ -740,52 +740,126 @@
 
 
 # # ################################################################################
-class Archer:
-    def __init__(self, num_arrows, health, name):
-        self.num_arrows = num_arrows
-        self.health = health
+# class Archer:
+#     def __init__(self, num_arrows, health, name):
+#         self.num_arrows = num_arrows
+#         self.health = health
+#         self.name = name
+
+#     def get_shot(self):
+#         if self.health >= 1:
+#             self.health -= 1
+#         else:
+#             print(f"{self.name} is dead")
+
+#     def shoot(self, target):
+#         if self.num_arrows <= 0:
+#             raise Exception(f"{self.name} can't shoot")
+#         else:
+#             self.num_arrows -= 1
+#             print(f"{self.name} {target.name}")
+#             target.get_shot()
+
+
+# # don't touch below this line
+
+
+# def main():
+#     bard = Archer(1, 3, "Bard")
+#     legolas = Archer(10000, 3, "Legolas")
+
+#     while bard.health > 0 and legolas.health > 0:
+#         try:
+#             print_status(bard)
+#             print_status(legolas)
+#             bard.shoot(legolas)
+#         except Exception as e:
+#             print(e)
+
+#         try:
+#             print_status(bard)
+#             print_status(legolas)
+#             legolas.shoot(bard)
+#         except Exception as e:
+#             print(e)
+
+
+# def print_status(archer):
+#     print(f"{archer.name} has {archer.health} health and {archer.num_arrows} arrows")
+
+
+# main()
+
+
+# # ################################################################################
+# CLASSES
+class Book:
+    def __init__(self, title, author):
+        self.title = title
+        self.author = author
+
+
+class Library:
+    def __init__(self, name):
         self.name = name
+        self.books = []
 
-    def get_shot(self):
-        if self.health >= 1:
-            self.health -= 1
-        else:
-            print(f"{self.name} is dead")
+    def add_book(self, book):
+        self.books.append(book)
 
-    def shoot(self, target):
-        if self.num_arrows <= 0:
-            raise Exception(f"{self.name} can't shoot")
-        else:
-            self.num_arrows -= 1
-            print(f"{self.name} {target.name}")
-            target.get_shot()
+    def remove_book(self, book):
+        if book in self.books:
+            self.books.remove(book)
+
+    def search_books(self, search_string):
+        search_list = []
+        for book in self.books:
+            if (
+                search_string.lower() in book.title.lower()
+                or search_string.lower() in book.author.lower()
+            ):
+                search_list.append(book)
+        return search_list
 
 
 # don't touch below this line
 
 
-def main():
-    bard = Archer(1, 3, "Bard")
-    legolas = Archer(10000, 3, "Legolas")
+def test_library(library_name, book_names, book_authors):
+    library = Library(library_name)
+    print(f"Created library: {library_name}")
+    for i in range(len(book_names)):
+        book = Book(book_names[i], book_authors[i])
+        library.add_book(book)
+        print(f"Added book: {book.title} by {book.author}")
+    print(f"Books in {library_name}:")
+    for book in library.books:
+        print(f"- {book.title} by {book.author}")
+    book_to_remove = library.books[0]
+    library.remove_book(book_to_remove)
+    print(f"Removed book: {book_to_remove.title} by {book_to_remove.author}")
+    print("Books in library after removing a book:")
+    for book in library.books:
+        print(f"- {book.title} by {book.author}")
 
-    while bard.health > 0 and legolas.health > 0:
-        try:
-            print_status(bard)
-            print_status(legolas)
-            bard.shoot(legolas)
-        except Exception as e:
-            print(e)
-
-        try:
-            print_status(bard)
-            print_status(legolas)
-            legolas.shoot(bard)
-        except Exception as e:
-            print(e)
+    # Search for books
+    search_query = "kill"
+    search_results = library.search_books(search_query)
+    if len(search_results) == 0:
+        print(f"No results found for search query: {search_query}")
+    else:
+        print(f"Search results for query '{search_query}':")
+        for book in search_results:
+            print(f"- {book.title} by {book.author}")
 
 
-def print_status(archer):
-    print(f"{archer.name} has {archer.health} health and {archer.num_arrows} arrows")
-
-
-main()
+test_library(
+    "John's Library",
+    ["The Catcher in the Rye", "To Kill a Mockingbird", "1984"],
+    ["J.D. Salinger", "Harper Lee", "George Orwell"],
+)
+test_library(
+    "Ashley's Library",
+    ["The Great Gatsby", "Pride and Prejudice", "The Lord of the Rings", "Song of Six"],
+    ["F. Scott Fitzgerald", "Jane Austen", "J.R.R. Tolkien", "Harper D Kill"],
+)
