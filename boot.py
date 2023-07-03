@@ -864,64 +864,146 @@
 #     ["F. Scott Fitzgerald", "Jane Austen", "J.R.R. Tolkien", "Harper D Kill"],
 # )
 # # ################################################################################
-class Student:
-    def __init__(self, name, score):
-        self.name = name
-        self.score = score
-        self.__courses = {}  # private class variable
+# class Student:
+#     def __init__(self, name, score):
+#         self.name = name
+#         self.score = score
+#         self.__courses = {}  # private class variable
 
-    def calculate_letter_grade(self, score):
-        if score >= 90:
-            return "A"
-        elif score >= 80 and score < 90:
-            return "B"
-        elif score >= 70 and score < 79:
-            return "C"
-        elif score > 60 and score < 69:
-            return "D"
+#     def calculate_letter_grade(self, score):
+#         if score >= 90:
+#             return "A"
+#         elif score >= 80 and score < 90:
+#             return "B"
+#         elif score >= 70 and score < 79:
+#             return "C"
+#         elif score > 60 and score < 69:
+#             return "D"
+#         else:
+#             return "F"
+
+#     def add_course(self, course_name, score):
+#         grade = self.calculate_letter_grade(score)
+#         self.__courses[course_name] = grade
+
+#     def get_courses(self):
+#         return self.__courses
+
+
+# # don't touch below this line
+
+
+# def test(student_name, courses, scores):
+#     student = Student(student_name, scores)
+#     print(f"Student created: {student_name}")
+
+#     for i, course in enumerate(courses):
+#         student.add_course(course, scores[i])
+#         print(f"Added course: {course} with score: {scores[i]}")
+#     courses = student.get_courses()
+#     for course in courses:
+#         print(f"{student_name}'s grade in {course} is a {courses[course]}")
+#     test_encapsulation(student)
+#     print("=====================================")
+
+
+# def test_encapsulation(student):
+#     try:
+#         print(student.__courses)
+#     except:
+#         print("Private data member is encapsulated properly")
+
+
+# def main():
+#     test("John Thorton", ["Math", "English", "History"], [85, 92, 76])
+#     test("Jasper Allen", ["Science", "Social Studies"], [90, 88])
+#     test(
+#         "Bobby Christensen",
+#         ["Physics", "Chemistry", "Biology", "Geology"],
+#         [80, 78, 85, 90],
+#     )
+
+
+# main()
+# # # ################################################################################
+# CALCULATOR
+class Calculator:
+    def __init__(self):
+        self.__result = 0
+
+    def add(self, a):
+        self.__result += a
+
+    def subtract(self, a):
+        self.__result -= a
+
+    def multiply(self, a):
+        self.__result *= a
+
+    def divide(self, a):
+        if a == 0:
+            raise ValueError("Cannot divide by zero")
         else:
-            return "F"
+            self.__result /= a
 
-    def add_course(self, course_name, score):
-        grade = self.calculate_letter_grade(score)
-        self.__courses[course_name] = grade
+    def modulo(self, a):
+        if a == 0:
+            raise ValueError("Cannot divide by zero")
+        else:
+            self.__result %= a
 
-    def get_courses(self):
-        return self.__courses
+    def power(self, a):
+        self.__result **= a
+
+    def square_root(self):
+        self.__result **= 0.5
+
+    def clear(self):
+        self.__result = 0
+
+    def get_result(self):
+        return self.__result
 
 
 # don't touch below this line
 
 
-def test(student_name, courses, scores):
-    student = Student(student_name, scores)
-    print(f"Student created: {student_name}")
-
-    for i, course in enumerate(courses):
-        student.add_course(course, scores[i])
-        print(f"Added course: {course} with score: {scores[i]}")
-    courses = student.get_courses()
-    for course in courses:
-        print(f"{student_name}'s grade in {course} is a {courses[course]}")
-    test_encapsulation(student)
+def test(starting_num):
+    calculator = Calculator()
+    calculator.add(starting_num)
+    print(f"Starting number: {starting_num}")
+    print(f"Result: {calculator.get_result():.2f}")
+    print(f"Adding 5...")
+    calculator.add(5)
+    print(f"Result: {calculator.get_result():.2f}")
+    print(f"Modulo 7...")
+    calculator.modulo(7)
+    print(f"Result: {calculator.get_result():.2f}")
+    print(f"Power 2...")
+    calculator.power(2)
+    print(f"Result: {calculator.get_result():.2f}")
+    print(f"Square root...")
+    calculator.square_root()
+    print(f"Result: {calculator.get_result():.2f}")
+    print(f"Subtracting 3...")
+    calculator.subtract(3)
+    print(f"Result: {calculator.get_result():.2f}")
+    print(f"Multiplying by 2...")
+    calculator.multiply(2)
+    print(f"Result: {calculator.get_result():.2f}")
+    print(f"Dividing by 6...")
+    calculator.divide(6)
+    print(f"Result: {calculator.get_result():.2f}")
+    print(f"Clearing...")
+    calculator.clear()
+    print(f"Result: {calculator.get_result():.2f}")
     print("=====================================")
 
 
-def test_encapsulation(student):
-    try:
-        print(student.__courses)
-    except:
-        print("Private data member is encapsulated properly")
-
-
 def main():
-    test("John Thorton", ["Math", "English", "History"], [85, 92, 76])
-    test("Jasper Allen", ["Science", "Social Studies"], [90, 88])
-    test(
-        "Bobby Christensen",
-        ["Physics", "Chemistry", "Biology", "Geology"],
-        [80, 78, 85, 90],
-    )
+    test(11.0)
+    test(6.0)
+    test(0.0)
 
 
 main()
