@@ -1008,71 +1008,132 @@
 
 # main()
 # # ################################################################################
-import random
+# import random
 
 
-class DeckOfCards:
-    SUITS = ["Hearts", "Diamonds", "Clubs", "Spades"]
-    RANKS = [
-        "Ace",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8",
-        "9",
-        "10",
-        "Jack",
-        "Queen",
-        "King",
-    ]
+# class DeckOfCards:
+#     SUITS = ["Hearts", "Diamonds", "Clubs", "Spades"]
+#     RANKS = [
+#         "Ace",
+#         "2",
+#         "3",
+#         "4",
+#         "5",
+#         "6",
+#         "7",
+#         "8",
+#         "9",
+#         "10",
+#         "Jack",
+#         "Queen",
+#         "King",
+#     ]
 
-    def __init__(self):
-        self.__cards = []
-        self.create_deck()
+#     def __init__(self):
+#         self.__cards = []
+#         self.create_deck()
 
-    def create_deck(self):
-        for suit in self.SUITS:
-            for rank in self.RANKS:
-                card = (rank, suit)
-                self.__cards.append(card)
+#     def create_deck(self):
+#         for suit in self.SUITS:
+#             for rank in self.RANKS:
+#                 card = (rank, suit)
+#                 self.__cards.append(card)
 
-    def shuffle_deck(self):
-        random.shuffle(self.__cards)
+#     def shuffle_deck(self):
+#         random.shuffle(self.__cards)
 
-    def deal_card(self):
-        if len(self.__cards) == 0:
-            return None
-        return self.__cards.pop(0)
+#     def deal_card(self):
+#         if len(self.__cards) == 0:
+#             return None
+#         return self.__cards.pop(0)
 
-    # don't touch below this line
-    def __str__(self):
-        return f"The deck has {len(self.__cards)} cards"
+#     # don't touch below this line
+#     def __str__(self):
+#         return f"The deck has {len(self.__cards)} cards"
 
 
-def test(deck):
-    print(deck)
-    print("Dealing a hand:")
-    hand = []
-    for i in range(5):
-        card = deck.deal_card()
-        if card is None:
-            print("Out of cards!")
-            break
-        print(f" - {card[0]} of {card[1]}")
-    print("=====================================")
-    return deck
+# def test(deck):
+#     print(deck)
+#     print("Dealing a hand:")
+#     hand = []
+#     for i in range(5):
+#         card = deck.deal_card()
+#         if card is None:
+#             print("Out of cards!")
+#             break
+#         print(f" - {card[0]} of {card[1]}")
+#     print("=====================================")
+#     return deck
+
+
+# def main():
+#     random.seed(1)
+#     deck = DeckOfCards()
+#     deck.shuffle_deck()
+#     deck = test(deck)
+#     deck = test(deck)
+#     deck = test(deck)
+
+
+# main()
+# # ################################################################################
+class Human:
+    def __init__(self, name):
+        self.__name = name
+
+    def get_name(self):
+        return self.__name
+
+
+class Archer(Human):
+    def __init__(self, name, num_arrows):
+        super().__init__(name)
+        self.__num_arrows = num_arrows
+
+    def get_num_arrows(self):
+        return self.__num_arrows
+
+    def use_arrows(self, num):
+        if self.__num_arrows < num:
+            raise Exception("not enough arrows")
+        self.__num_arrows -= num
+
+
+class Crossbowman(Archer):
+    def __init__(self, name, num_arrows):
+        super().__init__(name, num_arrows)
+
+    def triple_shot(self, target):
+        self.use_arrows(3)
+        print(f"{target.get_name()} was shot by 3 crossbow bolts")
+
+
+# don't touch below this line
 
 
 def main():
-    random.seed(1)
-    deck = DeckOfCards()
-    deck.shuffle_deck()
-    deck = test(deck)
-    deck = test(deck)
-    deck = test(deck)
+    try:
+        print("creating an archer named Bard")
+        human2 = Archer("Bard", 1)
+        identify(human2)
+        print(f"Bard has {human2.get_num_arrows()} arrows")
+
+        print("creating a crossbowman named Sir Not-Appearing-In-This-Film")
+        human3 = Crossbowman("Sir Not-Appearing-In-This-Film", 4)
+        identify(human3)
+        print(f"{human3.get_name()} has {human3.get_num_arrows()} arrows")
+        print(f"{human3.get_name()} attempts to shoot {human2.get_name()}")
+        human3.triple_shot(human2)
+        print(f"{human3.get_name()} has {human3.get_num_arrows()} arrows")
+        print(f"{human3.get_name()} attempts to shoot {human2.get_name()}")
+        human3.triple_shot(human2)
+
+    except Exception as e:
+        print(e)
+
+
+def identify(human):
+    print(f"Getting name: {human.get_name()}")
 
 
 main()
