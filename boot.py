@@ -925,187 +925,245 @@
 
 
 # main()
+# # # # ################################################################################
+# # # CALCULATOR
+# # class Calculator:
+# #     def __init__(self):
+# #         self.__result = 0
+
+# #     def add(self, a):
+# #         self.__result += a
+
+# #     def subtract(self, a):
+# #         self.__result -= a
+
+# #     def multiply(self, a):
+# #         self.__result *= a
+
+# #     def divide(self, a):
+# #         if a == 0:
+# #             raise ValueError("Cannot divide by zero")
+# #         else:
+# #             self.__result /= a
+
+# #     def modulo(self, a):
+# #         if a == 0:
+# #             raise ValueError("Cannot divide by zero")
+# #         else:
+# #             self.__result %= a
+
+# #     def power(self, a):
+# #         self.__result **= a
+
+# #     def square_root(self):
+# #         self.__result **= 0.5
+
+# #     def clear(self):
+# #         self.__result = 0
+
+# #     def get_result(self):
+# #         return self.__result
+
+
+# # # don't touch below this line
+
+
+# # def test(starting_num):
+# #     calculator = Calculator()
+# #     calculator.add(starting_num)
+# #     print(f"Starting number: {starting_num}")
+# #     print(f"Result: {calculator.get_result():.2f}")
+# #     print(f"Adding 5...")
+# #     calculator.add(5)
+# #     print(f"Result: {calculator.get_result():.2f}")
+# #     print(f"Modulo 7...")
+# #     calculator.modulo(7)
+# #     print(f"Result: {calculator.get_result():.2f}")
+# #     print(f"Power 2...")
+# #     calculator.power(2)
+# #     print(f"Result: {calculator.get_result():.2f}")
+# #     print(f"Square root...")
+# #     calculator.square_root()
+# #     print(f"Result: {calculator.get_result():.2f}")
+# #     print(f"Subtracting 3...")
+# #     calculator.subtract(3)
+# #     print(f"Result: {calculator.get_result():.2f}")
+# #     print(f"Multiplying by 2...")
+# #     calculator.multiply(2)
+# #     print(f"Result: {calculator.get_result():.2f}")
+# #     print(f"Dividing by 6...")
+# #     calculator.divide(6)
+# #     print(f"Result: {calculator.get_result():.2f}")
+# #     print(f"Clearing...")
+# #     calculator.clear()
+# #     print(f"Result: {calculator.get_result():.2f}")
+# #     print("=====================================")
+
+
+# # def main():
+# #     test(11.0)
+# #     test(6.0)
+# #     test(0.0)
+
+
+# # main()
 # # # ################################################################################
-# # CALCULATOR
-# class Calculator:
-#     def __init__(self):
-#         self.__result = 0
-
-#     def add(self, a):
-#         self.__result += a
-
-#     def subtract(self, a):
-#         self.__result -= a
-
-#     def multiply(self, a):
-#         self.__result *= a
-
-#     def divide(self, a):
-#         if a == 0:
-#             raise ValueError("Cannot divide by zero")
-#         else:
-#             self.__result /= a
-
-#     def modulo(self, a):
-#         if a == 0:
-#             raise ValueError("Cannot divide by zero")
-#         else:
-#             self.__result %= a
-
-#     def power(self, a):
-#         self.__result **= a
-
-#     def square_root(self):
-#         self.__result **= 0.5
-
-#     def clear(self):
-#         self.__result = 0
-
-#     def get_result(self):
-#         return self.__result
+# # import random
 
 
-# # don't touch below this line
+# # class DeckOfCards:
+# #     SUITS = ["Hearts", "Diamonds", "Clubs", "Spades"]
+# #     RANKS = [
+# #         "Ace",
+# #         "2",
+# #         "3",
+# #         "4",
+# #         "5",
+# #         "6",
+# #         "7",
+# #         "8",
+# #         "9",
+# #         "10",
+# #         "Jack",
+# #         "Queen",
+# #         "King",
+# #     ]
+
+# #     def __init__(self):
+# #         self.__cards = []
+# #         self.create_deck()
+
+# #     def create_deck(self):
+# #         for suit in self.SUITS:
+# #             for rank in self.RANKS:
+# #                 card = (rank, suit)
+# #                 self.__cards.append(card)
+
+# #     def shuffle_deck(self):
+# #         random.shuffle(self.__cards)
+
+# #     def deal_card(self):
+# #         if len(self.__cards) == 0:
+# #             return None
+# #         return self.__cards.pop(0)
+
+# #     # don't touch below this line
+# #     def __str__(self):
+# #         return f"The deck has {len(self.__cards)} cards"
 
 
-# def test(starting_num):
-#     calculator = Calculator()
-#     calculator.add(starting_num)
-#     print(f"Starting number: {starting_num}")
-#     print(f"Result: {calculator.get_result():.2f}")
-#     print(f"Adding 5...")
-#     calculator.add(5)
-#     print(f"Result: {calculator.get_result():.2f}")
-#     print(f"Modulo 7...")
-#     calculator.modulo(7)
-#     print(f"Result: {calculator.get_result():.2f}")
-#     print(f"Power 2...")
-#     calculator.power(2)
-#     print(f"Result: {calculator.get_result():.2f}")
-#     print(f"Square root...")
-#     calculator.square_root()
-#     print(f"Result: {calculator.get_result():.2f}")
-#     print(f"Subtracting 3...")
-#     calculator.subtract(3)
-#     print(f"Result: {calculator.get_result():.2f}")
-#     print(f"Multiplying by 2...")
-#     calculator.multiply(2)
-#     print(f"Result: {calculator.get_result():.2f}")
-#     print(f"Dividing by 6...")
-#     calculator.divide(6)
-#     print(f"Result: {calculator.get_result():.2f}")
-#     print(f"Clearing...")
-#     calculator.clear()
-#     print(f"Result: {calculator.get_result():.2f}")
-#     print("=====================================")
+# # def test(deck):
+# #     print(deck)
+# #     print("Dealing a hand:")
+# #     hand = []
+# #     for i in range(5):
+# #         card = deck.deal_card()
+# #         if card is None:
+# #             print("Out of cards!")
+# #             break
+# #         print(f" - {card[0]} of {card[1]}")
+# #     print("=====================================")
+# #     return deck
 
 
-# def main():
-#     test(11.0)
-#     test(6.0)
-#     test(0.0)
+# # def main():
+# #     random.seed(1)
+# #     deck = DeckOfCards()
+# #     deck.shuffle_deck()
+# #     deck = test(deck)
+# #     deck = test(deck)
+# #     deck = test(deck)
 
 
-# main()
-# # ################################################################################
-# import random
+# # main()
+# # # ################################################################################
+# # class Human:
+# #     def __init__(self, name):
+# #         self.__name = name
+
+# #     def get_name(self):
+# #         return self.__name
 
 
-# class DeckOfCards:
-#     SUITS = ["Hearts", "Diamonds", "Clubs", "Spades"]
-#     RANKS = [
-#         "Ace",
-#         "2",
-#         "3",
-#         "4",
-#         "5",
-#         "6",
-#         "7",
-#         "8",
-#         "9",
-#         "10",
-#         "Jack",
-#         "Queen",
-#         "King",
-#     ]
+# # class Archer(Human):
+# #     def __init__(self, name, num_arrows):
+# #         super().__init__(name)
+# #         self.__num_arrows = num_arrows
 
-#     def __init__(self):
-#         self.__cards = []
-#         self.create_deck()
+# #     def get_num_arrows(self):
+# #         return self.__num_arrows
 
-#     def create_deck(self):
-#         for suit in self.SUITS:
-#             for rank in self.RANKS:
-#                 card = (rank, suit)
-#                 self.__cards.append(card)
-
-#     def shuffle_deck(self):
-#         random.shuffle(self.__cards)
-
-#     def deal_card(self):
-#         if len(self.__cards) == 0:
-#             return None
-#         return self.__cards.pop(0)
-
-#     # don't touch below this line
-#     def __str__(self):
-#         return f"The deck has {len(self.__cards)} cards"
+# #     def use_arrows(self, num):
+# #         if self.__num_arrows < num:
+# #             raise Exception("not enough arrows")
+# #         self.__num_arrows -= num
 
 
-# def test(deck):
-#     print(deck)
-#     print("Dealing a hand:")
-#     hand = []
-#     for i in range(5):
-#         card = deck.deal_card()
-#         if card is None:
-#             print("Out of cards!")
-#             break
-#         print(f" - {card[0]} of {card[1]}")
-#     print("=====================================")
-#     return deck
+# # class Crossbowman(Archer):
+# #     def __init__(self, name, num_arrows):
+# #         super().__init__(name, num_arrows)
+
+# #     def triple_shot(self, target):
+# #         self.use_arrows(3)
+# #         print(f"{target.get_name()} was shot by 3 crossbow bolts")
 
 
-# def main():
-#     random.seed(1)
-#     deck = DeckOfCards()
-#     deck.shuffle_deck()
-#     deck = test(deck)
-#     deck = test(deck)
-#     deck = test(deck)
+# # # don't touch below this line
 
 
-# main()
-# # ################################################################################
-# class Human:
-#     def __init__(self, name):
+# # def main():
+# #     try:
+# #         print("creating an archer named Bard")
+# #         human2 = Archer("Bard", 1)
+# #         identify(human2)
+# #         print(f"Bard has {human2.get_num_arrows()} arrows")
+
+# #         print("creating a crossbowman named Sir Not-Appearing-In-This-Film")
+# #         human3 = Crossbowman("Sir Not-Appearing-In-This-Film", 4)
+# #         identify(human3)
+# #         print(f"{human3.get_name()} has {human3.get_num_arrows()} arrows")
+# #         print(f"{human3.get_name()} attempts to shoot {human2.get_name()}")
+# #         human3.triple_shot(human2)
+# #         print(f"{human3.get_name()} has {human3.get_num_arrows()} arrows")
+# #         print(f"{human3.get_name()} attempts to shoot {human2.get_name()}")
+# #         human3.triple_shot(human2)
+
+# #     except Exception as e:
+# #         print(e)
+
+
+# # def identify(human):
+# #     print(f"Getting name: {human.get_name()}")
+
+
+# # main()
+# # # ################################################################################
+# class Hero:
+#     def __init__(self, name, health):
 #         self.__name = name
+#         self.__health = health
 
 #     def get_name(self):
 #         return self.__name
 
+#     def get_health(self):
+#         return self.__health
 
-# class Archer(Human):
-#     def __init__(self, name, num_arrows):
-#         super().__init__(name)
+#     def take_damage(self, damage):
+#         self.__health -= damage
+
+
+# # Create Archer class here
+# class Archer(Hero):
+#     def __init__(self, name, health, num_arrows):
+#         super().__init__(name, health)
 #         self.__num_arrows = num_arrows
 
-#     def get_num_arrows(self):
-#         return self.__num_arrows
-
-#     def use_arrows(self, num):
-#         if self.__num_arrows < num:
+#     def shoot(self, target):
+#         if self.__num_arrows <= 0:
 #             raise Exception("not enough arrows")
-#         self.__num_arrows -= num
-
-
-# class Crossbowman(Archer):
-#     def __init__(self, name, num_arrows):
-#         super().__init__(name, num_arrows)
-
-#     def triple_shot(self, target):
-#         self.use_arrows(3)
-#         print(f"{target.get_name()} was shot by 3 crossbow bolts")
+#         self.__num_arrows -= 1
+#         target.take_damage(10)
 
 
 # # don't touch below this line
@@ -1113,85 +1171,90 @@
 
 # def main():
 #     try:
-#         print("creating an archer named Bard")
-#         human2 = Archer("Bard", 1)
-#         identify(human2)
-#         print(f"Bard has {human2.get_num_arrows()} arrows")
+#         print("Creating a hero named Hercules with 200 health")
+#         human1 = Hero("Hercules", 200)
+#         identify(human1)
 
-#         print("creating a crossbowman named Sir Not-Appearing-In-This-Film")
-#         human3 = Crossbowman("Sir Not-Appearing-In-This-Film", 4)
-#         identify(human3)
-#         print(f"{human3.get_name()} has {human3.get_num_arrows()} arrows")
-#         print(f"{human3.get_name()} attempts to shoot {human2.get_name()}")
-#         human3.triple_shot(human2)
-#         print(f"{human3.get_name()} has {human3.get_num_arrows()} arrows")
-#         print(f"{human3.get_name()} attempts to shoot {human2.get_name()}")
-#         human3.triple_shot(human2)
+#         print("creating an Archer named Pericles with 100 health and 2 arrows")
+#         human2 = Archer("Pericles", 100, 2)
+#         identify(human2)
+
+#         while human1.get_health() > 0 and human2.get_health() > 0:
+#             print(f"{human2.get_name()} attempts to shoot {human1.get_name()}")
+#             human2.shoot(human1)
+#             identify(human1)
+#             identify(human2)
 
 #     except Exception as e:
 #         print(e)
 
 
 # def identify(human):
-#     print(f"Getting name: {human.get_name()}")
+#     print(f"Name: {human.get_name()}, health: {human.get_health()}")
 
 
 # main()
 # # ################################################################################
-class Hero:
-    def __init__(self, name, health):
-        self.__name = name
-        self.__health = health
+def main():
+    dragons = [
+        Dragon("Green Dragon", 0, 0, 1),
+        Dragon("Red Dragon", 2, 2, 2),
+        Dragon("Blue Dragon", 4, 3, 3),
+        Dragon("Black Dragon", 5, -1, 4),
+    ]
 
-    def get_name(self):
-        return self.__name
+    # don't touch above this line
 
-    def get_health(self):
-        return self.__health
+    for dragon in dragons:
+        describe(dragon)
+    dragons_copy = dragons.copy()
 
-    def take_damage(self, damage):
-        self.__health -= damage
-
-
-# Create Archer class here
-class Archer(Hero):
-    def __init__(self, name, health, num_arrows):
-        super().__init__(name, health)
-        self.__num_arrows = num_arrows
-
-    def shoot(self, target):
-        if self.__num_arrows <= 0:
-            raise Exception("not enough arrows")
-        self.__num_arrows -= 1
-        target.take_damage(10)
+    for dragon in dragons:
+        dragons_copy.remove(dragon)
+        dragon.breathe_fire(3, 3, dragons_copy)
+        dragons_copy.append(dragon)
 
 
 # don't touch below this line
 
 
-def main():
-    try:
-        print("Creating a hero named Hercules with 200 health")
-        human1 = Hero("Hercules", 200)
-        identify(human1)
-
-        print("creating an Archer named Pericles with 100 health and 2 arrows")
-        human2 = Archer("Pericles", 100, 2)
-        identify(human2)
-
-        while human1.get_health() > 0 and human2.get_health() > 0:
-            print(f"{human2.get_name()} attempts to shoot {human1.get_name()}")
-            human2.shoot(human1)
-            identify(human1)
-            identify(human2)
-
-    except Exception as e:
-        print(e)
+def describe(dragon):
+    print(f"{dragon.name} is at {dragon.pos_x}/{dragon.pos_y}")
 
 
-def identify(human):
-    print(f"Name: {human.get_name()}, health: {human.get_health()}")
+class Unit:
+    def __init__(self, name, pos_x, pos_y):
+        self.name = name
+        self.pos_x = pos_x
+        self.pos_y = pos_y
+
+    def in_area(self, x_1, y_1, x_2, y_2):
+        return (
+            self.pos_x >= x_1
+            and self.pos_x <= x_2
+            and self.pos_y >= y_1
+            and self.pos_y <= y_2
+        )
+
+
+class Dragon(Unit):
+    def __init__(self, name, pos_x, pos_y, fire_range):
+        super().__init__(name, pos_x, pos_y)
+        self.__fire_range = fire_range
+
+    def breathe_fire(self, x, y, units):
+        print(f"{self.name} breathes fire at {x}/{y} with range {self.__fire_range}")
+        for unit in units:
+            in_area = unit.in_area(
+                x - self.__fire_range,
+                y - self.__fire_range,
+                x + self.__fire_range,
+                y + self.__fire_range,
+            )
+            if in_area:
+                print(f"{unit.name} is hit by the fire")
 
 
 main()
+
 # # ################################################################################
