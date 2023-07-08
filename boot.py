@@ -1,3 +1,5 @@
+import math
+
 # # # print((250 + 241 + 244 + 255) / 4)
 # # # max_number_of_players = 1.024e18
 # # # print(max_number_of_players)
@@ -1258,32 +1260,62 @@
 # main()
 
 # # ################################################################################
-import math
+# import math
 
 
-def get_influencer_score(num_followers, average_engagement_percentage):
-    influencer_score = average_engagement_percentage * math.log(num_followers, 2)
-    return influencer_score
+# def get_influencer_score(num_followers, average_engagement_percentage):
+#     influencer_score = average_engagement_percentage * math.log(num_followers, 2)
+#     return influencer_score
+
+
+# # don't touch below this line
+
+
+# def test(num_followers, average_engagement_percentage):
+#     influencer_score = round(
+#         get_influencer_score(num_followers, average_engagement_percentage)
+#     )
+#     print(f"- num_followers: {num_followers}")
+#     print(f"- average_engagement_percentage: {average_engagement_percentage}")
+#     print(f"Influencer score: {influencer_score}")
+#     print("====================================")
+
+
+# def main():
+#     test(40000, 0.3)
+#     test(43000, 0.1)
+#     test(100000, 0.6)
+#     test(200, 0.8)
+
+
+# main()
+# # ################################################################################
+def decayed_followers(intl_followers, percent_lost_daily, days):
+    return intl_followers * (1 - percent_lost_daily) ** days
 
 
 # don't touch below this line
 
 
-def test(num_followers, average_engagement_percentage):
-    influencer_score = round(
-        get_influencer_score(num_followers, average_engagement_percentage)
-    )
-    print(f"- num_followers: {num_followers}")
-    print(f"- average_engagement_percentage: {average_engagement_percentage}")
-    print(f"Influencer score: {influencer_score}")
-    print("====================================")
+def test(intl_followers, percent_lost_daily, days):
+    final_value = round(decayed_followers(intl_followers, percent_lost_daily, days))
+    print(f"- Initial followers: {intl_followers}")
+    print(f"- Decay rate: {percent_lost_daily}")
+    print(f"- Days: {days}")
+    print(f"Final followers: {final_value}")
+    print("=====================================")
 
 
 def main():
-    test(40000, 0.3)
-    test(43000, 0.1)
-    test(100000, 0.6)
-    test(200, 0.8)
+    test(200, 0.5, 1)
+    test(200, 0.5, 2)
+    test(200, 0.5, 3)
+
+    test(1000, 0.005, 2)
+    test(1000, 0.05, 3)
+
+    test(1200, 0.55, 8)
+    test(1200, 0.09, 16)
 
 
 main()
