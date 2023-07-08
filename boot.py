@@ -1290,32 +1290,124 @@ import math
 
 # main()
 # # ################################################################################
-def decayed_followers(intl_followers, percent_lost_daily, days):
-    return intl_followers * (1 - percent_lost_daily) ** days
+# def decayed_followers(intl_followers, percent_lost_daily, days):
+#     return intl_followers * (1 - percent_lost_daily) ** days
+
+
+# # don't touch below this line
+
+
+# def test(intl_followers, percent_lost_daily, days):
+#     final_value = round(decayed_followers(intl_followers, percent_lost_daily, days))
+#     print(f"- Initial followers: {intl_followers}")
+#     print(f"- Decay rate: {percent_lost_daily}")
+#     print(f"- Days: {days}")
+#     print(f"Final followers: {final_value}")
+#     print("=====================================")
+
+
+# def main():
+#     test(200, 0.5, 1)
+#     test(200, 0.5, 2)
+#     test(200, 0.5, 3)
+
+#     test(1000, 0.005, 2)
+#     test(1000, 0.05, 3)
+
+#     test(1200, 0.55, 8)
+#     test(1200, 0.09, 16)
+
+
+# main()
+# # #####################################################################################
+
+# import math
+
+
+# def log_scale(data, base):
+#     new_list = []
+#     for num in data:
+#         new = math.log(num, base)
+#         new_list.append(new)
+#     return new_list
+
+
+# # don't touch below this line
+
+
+# def test(data, base):
+#     scaled_data = log_scale(data, base)
+#     for i in range(0, len(scaled_data)):
+#         scaled_data[i] = round(scaled_data[i], 2)
+
+#     print(f"- Data: {data}")
+#     print(f"- Base: {base}")
+#     print(f"Scaled data: {scaled_data}")
+#     print("=====================================")
+
+
+# def main():
+#     test([1, 10, 100, 1000], 10)
+#     test([1, 2, 4, 8, 16], 2)
+#     test([100, 1000, 10000], 4)
+
+
+# main()
+
+
+# # #####################################################################################
+def does_name_exist(first_names, last_names, full_name):
+    for first_name in first_names:
+        for last_name in last_names:
+            if first_name + " " + last_name == full_name:
+                return True
+    return False
 
 
 # don't touch below this line
 
 
-def test(intl_followers, percent_lost_daily, days):
-    final_value = round(decayed_followers(intl_followers, percent_lost_daily, days))
-    print(f"- Initial followers: {intl_followers}")
-    print(f"- Decay rate: {percent_lost_daily}")
-    print(f"- Days: {days}")
-    print(f"Final followers: {final_value}")
-    print("=====================================")
+def test(first_names, last_names, full_name):
+    res = does_name_exist(first_names, last_names, full_name)
+    print(f"- num first_names: {len(first_names)}")
+    print(f"- num last_names: {len(last_names)}")
+    print(f"- full_name: {full_name}")
+    print(f"Name exists: {res}")
+    print("====================================")
 
 
 def main():
-    test(200, 0.5, 1)
-    test(200, 0.5, 2)
-    test(200, 0.5, 3)
+    test(get_first_names(100), get_last_names(100), "bob0 gonzalez0")
+    test(get_first_names(500), get_last_names(500), "bob0 smith1")
+    test(get_first_names(1000), get_last_names(1000), "bob500 smith6")
+    test(get_first_names(2000), get_last_names(2000), "bob1999 wagner1998")
+    test(get_first_names(3000), get_last_names(3000), "sally2999 smith2998")
 
-    test(1000, 0.005, 2)
-    test(1000, 0.05, 3)
 
-    test(1200, 0.55, 8)
-    test(1200, 0.09, 16)
+def get_first_names(num):
+    names = []
+    for i in range(num):
+        m = i % 3
+        if m == 0:
+            names.append(f"bob{i}")
+        elif m == 1:
+            names.append(f"maria{i}")
+        if m == 2:
+            names.append(f"sally{i}")
+    return names
+
+
+def get_last_names(num):
+    names = []
+    for i in range(num):
+        m = i % 3
+        if m == 0:
+            names.append(f"gonzalez{i}")
+        elif m == 1:
+            names.append(f"smith{i}")
+        if m == 2:
+            names.append(f"wagner{i}")
+    return names
 
 
 main()
