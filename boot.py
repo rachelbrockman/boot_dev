@@ -1356,58 +1356,126 @@ import math
 
 
 # # #####################################################################################
-def does_name_exist(first_names, last_names, full_name):
-    for first_name in first_names:
-        for last_name in last_names:
-            if first_name + " " + last_name == full_name:
-                return True
-    return False
+# def does_name_exist(first_names, last_names, full_name):
+#     for first_name in first_names:
+#         for last_name in last_names:
+#             if first_name + " " + last_name == full_name:
+#                 return True
+#     return False
 
 
 # don't touch below this line
 
 
-def test(first_names, last_names, full_name):
-    res = does_name_exist(first_names, last_names, full_name)
-    print(f"- num first_names: {len(first_names)}")
-    print(f"- num last_names: {len(last_names)}")
-    print(f"- full_name: {full_name}")
-    print(f"Name exists: {res}")
+# def test(first_names, last_names, full_name):
+#     res = does_name_exist(first_names, last_names, full_name)
+#     print(f"- num first_names: {len(first_names)}")
+#     print(f"- num last_names: {len(last_names)}")
+#     print(f"- full_name: {full_name}")
+#     print(f"Name exists: {res}")
+#     print("====================================")
+
+
+# def main():
+#     test(get_first_names(100), get_last_names(100), "bob0 gonzalez0")
+#     test(get_first_names(500), get_last_names(500), "bob0 smith1")
+#     test(get_first_names(1000), get_last_names(1000), "bob500 smith6")
+#     test(get_first_names(2000), get_last_names(2000), "bob1999 wagner1998")
+#     test(get_first_names(3000), get_last_names(3000), "sally2999 smith2998")
+
+
+# def get_first_names(num):
+#     names = []
+#     for i in range(num):
+#         m = i % 3
+#         if m == 0:
+#             names.append(f"bob{i}")
+#         elif m == 1:
+#             names.append(f"maria{i}")
+#         if m == 2:
+#             names.append(f"sally{i}")
+#     return names
+
+
+# def get_last_names(num):
+#     names = []
+#     for i in range(num):
+#         m = i % 3
+#         if m == 0:
+#             names.append(f"gonzalez{i}")
+#         elif m == 1:
+#             names.append(f"smith{i}")
+#         if m == 2:
+#             names.append(f"wagner{i}")
+#     return names
+
+
+# main()
+
+# # #####################################################################################
+import time
+
+
+def binary_search(target, arr):
+    low = 0
+    high = len(arr) - 1
+    mid = 0
+    while low <= high:
+        mid = (high + low) // 2
+        # if target is greater, ignore left half
+        if arr[mid] < target:
+            low = mid + 1
+        # if target is smaller, ignore right half
+        elif arr[mid] > target:
+            high = mid - 1
+        # means target is present at mid
+        else:
+            return True
+    if low < len(arr) and arr[low] == target:
+        return True
+    else:
+        return False
+
+
+# don't touch below this line
+
+
+def benchmark(names_dict, first_name):
+    start = time.time()
+    test(names_dict, first_name)
+    end = time.time()
+
+    timeout = 0.05
+
+    if (end - start) < timeout:
+        print(f"test completed in less than {timeout * 1000} milliseconds!")
+    else:
+        print(f"test took too long ({(end - start) * 1000} milliseconds). Speed it up!")
     print("====================================")
 
 
+def test(target, arr):
+    res = binary_search(target, arr)
+    print(f"- len arr: {len(arr)}")
+    print(f"- target: {target}")
+    print(f"Result: {res}")
+    print("------------------------------------")
+
+
 def main():
-    test(get_first_names(100), get_last_names(100), "bob0 gonzalez0")
-    test(get_first_names(500), get_last_names(500), "bob0 smith1")
-    test(get_first_names(1000), get_last_names(1000), "bob500 smith6")
-    test(get_first_names(2000), get_last_names(2000), "bob1999 wagner1998")
-    test(get_first_names(3000), get_last_names(3000), "sally2999 smith2998")
+    complexity = 2000000
+    nums = get_nums(complexity)
+    benchmark(int(complexity * 0.2344), nums)
+    benchmark(int(complexity * 2), nums)
+    benchmark(int(complexity + 1), nums)
+    benchmark(int(complexity * 0.765), nums)
 
 
-def get_first_names(num):
-    names = []
+def get_nums(num):
+    nums = []
     for i in range(num):
-        m = i % 3
-        if m == 0:
-            names.append(f"bob{i}")
-        elif m == 1:
-            names.append(f"maria{i}")
-        if m == 2:
-            names.append(f"sally{i}")
-    return names
-
-
-def get_last_names(num):
-    names = []
-    for i in range(num):
-        m = i % 3
-        if m == 0:
-            names.append(f"gonzalez{i}")
-        elif m == 1:
-            names.append(f"smith{i}")
-        if m == 2:
-            names.append(f"wagner{i}")
-    return names
+        nums.append(i)
+    return nums
 
 
 main()
