@@ -1413,69 +1413,96 @@ import math
 # main()
 
 # # #####################################################################################
-import time
+# import time
 
 
-def binary_search(target, arr):
-    low = 0
-    high = len(arr) - 1
-    mid = 0
-    while low <= high:
-        mid = (high + low) // 2
-        # if target is greater, ignore left half
-        if arr[mid] < target:
-            low = mid + 1
-        # if target is smaller, ignore right half
-        elif arr[mid] > target:
-            high = mid - 1
-        # means target is present at mid
-        else:
-            return True
-    if low < len(arr) and arr[low] == target:
-        return True
-    else:
-        return False
+# def binary_search(target, arr):
+#     low = 0
+#     high = len(arr) - 1
+#     mid = 0
+#     while low <= high:
+#         mid = (high + low) // 2
+#         # if target is greater, ignore left half
+#         if arr[mid] < target:
+#             low = mid + 1
+#         # if target is smaller, ignore right half
+#         elif arr[mid] > target:
+#             high = mid - 1
+#         # means target is present at mid
+#         else:
+#             return True
+#     if low < len(arr) and arr[low] == target:
+#         return True
+#     else:
+#         return False
+
+
+# # don't touch below this line
+
+
+# def benchmark(names_dict, first_name):
+#     start = time.time()
+#     test(names_dict, first_name)
+#     end = time.time()
+
+#     timeout = 0.05
+
+#     if (end - start) < timeout:
+#         print(f"test completed in less than {timeout * 1000} milliseconds!")
+#     else:
+#         print(f"test took too long ({(end - start) * 1000} milliseconds). Speed it up!")
+#     print("====================================")
+
+
+# def test(target, arr):
+#     res = binary_search(target, arr)
+#     print(f"- len arr: {len(arr)}")
+#     print(f"- target: {target}")
+#     print(f"Result: {res}")
+#     print("------------------------------------")
+
+
+# def main():
+#     complexity = 2000000
+#     nums = get_nums(complexity)
+#     benchmark(int(complexity * 0.2344), nums)
+#     benchmark(int(complexity * 2), nums)
+#     benchmark(int(complexity + 1), nums)
+#     benchmark(int(complexity * 0.765), nums)
+
+
+# def get_nums(num):
+#     nums = []
+#     for i in range(num):
+#         nums.append(i)
+#     return nums
+
+
+# main()
+# # #####################################################################################
+def exponential_growth(n, factor, days):
+    growth = []
+    growth.append(n**factor**days)
+    return growth
 
 
 # don't touch below this line
 
 
-def benchmark(names_dict, first_name):
-    start = time.time()
-    test(names_dict, first_name)
-    end = time.time()
-
-    timeout = 0.05
-
-    if (end - start) < timeout:
-        print(f"test completed in less than {timeout * 1000} milliseconds!")
-    else:
-        print(f"test took too long ({(end - start) * 1000} milliseconds). Speed it up!")
-    print("====================================")
-
-
-def test(target, arr):
-    res = binary_search(target, arr)
-    print(f"- len arr: {len(arr)}")
-    print(f"- target: {target}")
-    print(f"Result: {res}")
-    print("------------------------------------")
+def test(n, factor, days):
+    growth_sequence = exponential_growth(n, factor, days)
+    print(f"- Initial followers: {n}")
+    print(f"- Growth factor: {factor}")
+    print(f"- Days: {days}")
+    print(f"Growth sequence: {growth_sequence}")
+    print("=====================================")
 
 
 def main():
-    complexity = 2000000
-    nums = get_nums(complexity)
-    benchmark(int(complexity * 0.2344), nums)
-    benchmark(int(complexity * 2), nums)
-    benchmark(int(complexity + 1), nums)
-    benchmark(int(complexity * 0.765), nums)
-
-
-def get_nums(num):
-    nums = []
-    for i in range(num):
-        nums.append(i)
-    return nums
+    test(10, 2, 4)
+    test(20, 2, 6)
+    test(30, 3, 3)
+    test(40, 10, 10)
 
 
 main()
