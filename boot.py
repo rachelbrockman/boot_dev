@@ -1480,29 +1480,47 @@ import math
 
 # main()
 # # #####################################################################################
-def exponential_growth(n, factor, days):
-    growth = []
-    growth.append(n**factor**days)
-    return growth
+# def exponential_growth(n, factor, days):
+#     growth = []
+#     growth.append(n**factor**days)
+#     return growth
 
 
-# don't touch below this line
+# # don't touch below this line
 
 
-def test(n, factor, days):
-    growth_sequence = exponential_growth(n, factor, days)
-    print(f"- Initial followers: {n}")
-    print(f"- Growth factor: {factor}")
-    print(f"- Days: {days}")
-    print(f"Growth sequence: {growth_sequence}")
-    print("=====================================")
+# def test(n, factor, days):
+#     growth_sequence = exponential_growth(n, factor, days)
+#     print(f"- Initial followers: {n}")
+#     print(f"- Growth factor: {factor}")
+#     print(f"- Days: {days}")
+#     print(f"Growth sequence: {growth_sequence}")
+#     print("=====================================")
 
 
-def main():
-    test(10, 2, 4)
-    test(20, 2, 6)
-    test(30, 3, 3)
-    test(40, 10, 10)
+# def main():
+#     test(10, 2, 4)
+#     test(20, 2, 6)
+#     test(30, 3, 3)
+#     test(40, 10, 10)
 
 
-main()
+# main()
+# # #####################################################################################
+# TSP problem
+import random
+
+
+def tsp(cities, paths, dist):
+    all_paths = permutations(cities)
+
+    for path in all_paths:
+        total_distance = 0
+        for i in range(len(path) - 1):
+            cityA = path[i]
+            cityB = path[i + 1]
+            total_distance += paths[cityA][cityB]
+
+        if total_distance < dist:
+            return True
+    return False
