@@ -1528,7 +1528,13 @@ import math
 
 # # #####################################################################################
 # codewar - easy 8 kyu
-def string_to_number(s):
-    number = int(s)
-    return number
-    pass
+# def string_to_number(s):
+#     number = int(s)
+#     return number
+#     pass
+# # #####################################################################################
+# code war- medium
+# return a list of the first n multiples of x
+def count_by(x, n):
+    multiples = [x * i for i in range(1, n + 1)]
+    return multiples
