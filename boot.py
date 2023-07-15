@@ -1508,19 +1508,27 @@ import math
 # main()
 # # #####################################################################################
 # TSP problem
-import random
+# import random
 
 
-def tsp(cities, paths, dist):
-    all_paths = permutations(cities)
+# def tsp(cities, paths, dist):
+#     all_paths = permutations(cities)
 
-    for path in all_paths:
-        total_distance = 0
-        for i in range(len(path) - 1):
-            cityA = path[i]
-            cityB = path[i + 1]
-            total_distance += paths[cityA][cityB]
+#     for path in all_paths:
+#         total_distance = 0
+#         for i in range(len(path) - 1):
+#             cityA = path[i]
+#             cityB = path[i + 1]
+#             total_distance += paths[cityA][cityB]
 
-        if total_distance < dist:
-            return True
-    return False
+#         if total_distance < dist:
+#             return True
+#     return False
+
+
+# # #####################################################################################
+# codewar - easy 8 kyu
+def string_to_number(s):
+    number = int(s)
+    return number
+    pass
