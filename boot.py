@@ -1535,6 +1535,15 @@ import math
 # # #####################################################################################
 # code war- medium
 # return a list of the first n multiples of x
-def count_by(x, n):
-    multiples = [x * i for i in range(1, n + 1)]
-    return multiples
+# def count_by(x, n):
+#     multiples = [x * i for i in range(1, n + 1)]
+#     return multiples
+
+
+# # #####################################################################################
+# 8kyu kata
+def past(h, m, s):
+    hours = h * 3.6e6
+    minutes = m * 60000
+    seconds = s * 1000
+    return hours + minutes + seconds
