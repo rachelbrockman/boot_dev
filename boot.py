@@ -1542,8 +1542,25 @@ import math
 
 # # #####################################################################################
 # 8kyu kata
-def past(h, m, s):
-    hours = h * 3.6e6
-    minutes = m * 60000
-    seconds = s * 1000
-    return hours + minutes + seconds
+# def past(h, m, s):
+#     hours = h * 3.6e6
+#     minutes = m * 60000
+#     seconds = s * 1000
+#     return hours + minutes + seconds
+# # #####################################################################################
+# 6 kyu kata
+def likes(names):
+    if len(names) == 0:
+        return "no one likes this"
+    if len(names) == 1:
+        return f"{names[0]} likes this"
+    if len(names) == 2:
+        return f"{names[0]} and {names[1]} like this"
+    if len(names) == 3:
+        return f"{names[0]}, {names[1]} and {names[2]} like this"
+    else:
+        return f"{names[0]}, {names[1]} and {len(names) - 2} others like this"
+    pass
+
+
+# # #####################################################################################
