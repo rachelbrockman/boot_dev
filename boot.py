@@ -1549,18 +1549,30 @@ import math
 #     return hours + minutes + seconds
 # # #####################################################################################
 # 6 kyu kata
-def likes(names):
-    if len(names) == 0:
-        return "no one likes this"
-    if len(names) == 1:
-        return f"{names[0]} likes this"
-    if len(names) == 2:
-        return f"{names[0]} and {names[1]} like this"
-    if len(names) == 3:
-        return f"{names[0]}, {names[1]} and {names[2]} like this"
-    else:
-        return f"{names[0]}, {names[1]} and {len(names) - 2} others like this"
-    pass
+# def likes(names):
+#     if len(names) == 0:
+#         return "no one likes this"
+#     if len(names) == 1:
+#         return f"{names[0]} likes this"
+#     if len(names) == 2:
+#         return f"{names[0]} and {names[1]} like this"
+#     if len(names) == 3:
+#         return f"{names[0]}, {names[1]} and {names[2]} like this"
+#     else:
+#         return f"{names[0]}, {names[1]} and {len(names) - 2} others like this"
+#     pass
+
+
+# # #####################################################################################
+# 6kyu kata- hard!
+def in_array(array1, array2):
+    result = []
+    for x in array1:
+        for y in array2:
+            if x in y and x not in result:
+                result.append(x)
+                break
+    return sorted(result)
 
 
 # # #####################################################################################
