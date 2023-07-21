@@ -1565,14 +1565,21 @@ import math
 
 # # #####################################################################################
 # 6kyu kata- hard!
-def in_array(array1, array2):
-    result = []
-    for x in array1:
-        for y in array2:
-            if x in y and x not in result:
-                result.append(x)
-                break
-    return sorted(result)
+# def in_array(array1, array2):
+#     result = []
+#     for x in array1:
+#         for y in array2:
+#             if x in y and x not in result:
+#                 result.append(x)
+#                 break
+#     return sorted(result)
 
 
 # # #####################################################################################
+# 8kyu kata
+def are_you_playing_banjo(name):
+    if name[0] == "r" or name[0] == "R":
+        return name + " plays banjo"
+
+    else:
+        return name + " does not play banjo"
