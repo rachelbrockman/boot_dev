@@ -1576,10 +1576,17 @@ import math
 
 
 # # #####################################################################################
-# 8kyu kata
-def are_you_playing_banjo(name):
-    if name[0] == "r" or name[0] == "R":
-        return name + " plays banjo"
+# # 8kyu kata
+# def are_you_playing_banjo(name):
+#     if name[0] == "r" or name[0] == "R":
+#         return name + " plays banjo"
 
-    else:
-        return name + " does not play banjo"
+#     else:
+#         return name + " does not play banjo"
+
+
+# # #####################################################################################
+# 7kyu kata
+def descending_order(num):
+    if num >= 0:
+        return int("".join(sorted(str(num), reverse=True)))
