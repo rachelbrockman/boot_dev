@@ -1593,9 +1593,15 @@ import math
 
 
 # # #####################################################################################
-# 8kyu kata
-def square_sum(numbers):
-    sqr_sum = 0
-    for num in numbers:
-        sqr_sum += num**2
-    return sqr_sum
+# # 8kyu kata
+# def square_sum(numbers):
+#     sqr_sum = 0
+#     for num in numbers:
+#         sqr_sum += num**2
+#     return sqr_sum
+
+
+# # #####################################################################################
+# Easy 8kui
+def solution(string):
+    return string[::-1]
