@@ -1601,7 +1601,12 @@ import math
 #     return sqr_sum
 
 
+# # # #####################################################################################
+# # Easy 8kui
+# def solution(string):
+#     return string[::-1]
 # # #####################################################################################
-# Easy 8kui
-def solution(string):
-    return string[::-1]
+
+
+def filter_list(l):
+    return [x for x in l if isinstance(x, int) and x >= 0]
