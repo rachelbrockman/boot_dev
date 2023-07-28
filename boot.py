@@ -1608,5 +1608,25 @@ import math
 # # #####################################################################################
 
 
-def filter_list(l):
-    return [x for x in l if isinstance(x, int) and x >= 0]
+# def filter_list(l):
+#     return [x for x in l if isinstance(x, int) and x >= 0]
+# # #####################################################################################
+# 8kyu
+# Color Ghost
+# Create a class Ghost
+
+# Ghost objects are instantiated without any arguments.
+
+# Ghost objects are given a random color attribute of "white" or "yellow" or "purple" or "red" when instantiated
+
+
+import random
+
+
+class Ghost(object):
+    color = ["white", "yellow", "purple", "red"]
+
+    def __init__(self):  # constructor method to init ghost object
+        self.color = random.choice(self.color)
+
+        # # #####################################################################################
