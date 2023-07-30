@@ -1620,13 +1620,25 @@ import math
 # Ghost objects are given a random color attribute of "white" or "yellow" or "purple" or "red" when instantiated
 
 
-import random
+# import random
 
 
-class Ghost(object):
-    color = ["white", "yellow", "purple", "red"]
+# class Ghost(object):
+#     color = ["white", "yellow", "purple", "red"]
 
-    def __init__(self):  # constructor method to init ghost object
-        self.color = random.choice(self.color)
+#     def __init__(self):  # constructor method to init ghost object
+#         self.color = random.choice(self.color)
 
-        # # #####################################################################################
+
+# # #####################################################################################
+def get_count(sentence):
+    vowel_count = 0
+    vowels = ["a", "e", "i", "o", "u"]
+    for char in sentence:
+        if char in vowels:
+            vowel_count += 1
+    return vowel_count
+
+
+print(get_count("hello there"))
+# # #####################################################################################
