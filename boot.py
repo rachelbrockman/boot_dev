@@ -1642,10 +1642,17 @@ import math
 
 # print(get_count("hello there"))
 # # #####################################################################################
-def disemvowel(string_):
-    for i in "a", "e", "i", "o", "u", "A", "E", "I", "O", "U":
-        string_ = string_.replace(i, "")
-    return string_
+# def disemvowel(string_):
+#     for i in "a", "e", "i", "o", "u", "A", "E", "I", "O", "U":
+#         string_ = string_.replace(i, "")
+#     return string_
+
+
+# # #####################################################################################
+def to_camel_case(text):
+    words = text.replace("-", "_").split("_")
+    camel_case = [words[0]] + [word.capitalize() for word in words[1:]]
+    return "".join(camel_case)
 
 
 # # #####################################################################################
