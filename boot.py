@@ -1631,14 +1631,21 @@ import math
 
 
 # # #####################################################################################
-def get_count(sentence):
-    vowel_count = 0
-    vowels = ["a", "e", "i", "o", "u"]
-    for char in sentence:
-        if char in vowels:
-            vowel_count += 1
-    return vowel_count
+# def get_count(sentence):
+#     vowel_count = 0
+#     vowels = ["a", "e", "i", "o", "u"]
+#     for char in sentence:
+#         if char in vowels:
+#             vowel_count += 1
+#     return vowel_count
 
 
-print(get_count("hello there"))
+# print(get_count("hello there"))
+# # #####################################################################################
+def disemvowel(string_):
+    for i in "a", "e", "i", "o", "u", "A", "E", "I", "O", "U":
+        string_ = string_.replace(i, "")
+    return string_
+
+
 # # #####################################################################################
