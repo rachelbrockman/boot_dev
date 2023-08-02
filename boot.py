@@ -1649,10 +1649,16 @@ import math
 
 
 # # #####################################################################################
-def to_camel_case(text):
-    words = text.replace("-", "_").split("_")
-    camel_case = [words[0]] + [word.capitalize() for word in words[1:]]
-    return "".join(camel_case)
+# def to_camel_case(text):
+#     words = text.replace("-", "_").split("_")
+#     camel_case = [words[0]] + [word.capitalize() for word in words[1:]]
+#     return "".join(camel_case)
+# # #####################################################################################
+# 7 kyu kata
+def to_jaden_case(string):
+    words = string.split()
+    cap_words = [word.capitalize() for word in words]
+    return " ".join(cap_words)
 
 
 # # #####################################################################################
