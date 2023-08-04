@@ -1655,10 +1655,22 @@ import math
 #     return "".join(camel_case)
 # # #####################################################################################
 # 7 kyu kata
-def to_jaden_case(string):
-    words = string.split()
-    cap_words = [word.capitalize() for word in words]
-    return " ".join(cap_words)
+# def to_jaden_case(string):
+#     words = string.split()
+#     cap_words = [word.capitalize() for word in words]
+#     return " ".join(cap_words)
+
+
+# # #####################################################################################
+# 6kyu kata
+def solution(s):
+    if len(s) % 2 == 0:
+        pairs = [s[i : i + 2] for i in range(0, len(s), 2)]
+        return pairs
+    else:
+        s += "_"
+        pairs = [s[i : i + 2] for i in range(0, len(s), 2)]
+        return pairs
 
 
 # # #####################################################################################
