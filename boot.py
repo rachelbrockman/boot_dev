@@ -1662,15 +1662,25 @@ import math
 
 
 # # #####################################################################################
+# # 6kyu kata
+# def solution(s):
+#     if len(s) % 2 == 0:
+#         pairs = [s[i : i + 2] for i in range(0, len(s), 2)]
+#         return pairs
+#     else:
+#         s += "_"
+#         pairs = [s[i : i + 2] for i in range(0, len(s), 2)]
+#         return pairs
+
+
+# # #####################################################################################
 # 6kyu kata
-def solution(s):
-    if len(s) % 2 == 0:
-        pairs = [s[i : i + 2] for i in range(0, len(s), 2)]
-        return pairs
-    else:
-        s += "_"
-        pairs = [s[i : i + 2] for i in range(0, len(s), 2)]
-        return pairs
+def array_diff(a, b):
+    differences = []
+    for num in a:
+        if num not in b:
+            differences.append(num)
+    return differences
 
 
 # # #####################################################################################
