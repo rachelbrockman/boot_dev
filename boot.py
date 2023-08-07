@@ -1674,13 +1674,19 @@ import math
 
 
 # # #####################################################################################
-# 6kyu kata
-def array_diff(a, b):
-    differences = []
-    for num in a:
-        if num not in b:
-            differences.append(num)
-    return differences
+# # 6kyu kata
+# def array_diff(a, b):
+#     differences = []
+#     for num in a:
+#         if num not in b:
+#             differences.append(num)
+#     return differences
 
 
-# # #####################################################################################
+######################################################################################
+def create_phone_number(n):
+    formatted = "({}{}{}) {}{}{}-{}{}{}{}".format(*n)
+    return formatted
+
+
+#######################################################################################
