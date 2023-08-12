@@ -1693,9 +1693,16 @@ import math
 # def make_upper_case(s):
 #     return s.upper()
 #######################################################################################
-# 8kyu kata
-def smash(words):
-    return " ".join(words)
+# # 8kyu kata
+# def smash(words):
+#     return " ".join(words)
+
+
+#######################################################################################
+# 7kyu kata filtering list
+def friend(x):
+    my_friends = [name for name in x if len(name) == 4]
+    return my_friends
 
 
 #######################################################################################
