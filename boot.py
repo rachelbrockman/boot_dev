@@ -1700,9 +1700,17 @@ import math
 
 #######################################################################################
 # 7kyu kata filtering list
-def friend(x):
-    my_friends = [name for name in x if len(name) == 4]
-    return my_friends
+# def friend(x):
+#     my_friends = [name for name in x if len(name) == 4]
+#     return my_friends
+
+
+#######################################################################################
+# 7kyu reverse string
+def reverse_words(text):
+    words = text.split(" ")
+    reversed = [word[::-1] for word in words]
+    return " ".join(reversed)
 
 
 #######################################################################################
