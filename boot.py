@@ -1707,10 +1707,27 @@ import math
 
 #######################################################################################
 # 7kyu reverse string
-def reverse_words(text):
-    words = text.split(" ")
-    reversed = [word[::-1] for word in words]
-    return " ".join(reversed)
+# def reverse_words(text):
+#     words = text.split(" ")
+#     reversed = [word[::-1] for word in words]
+#     return " ".join(reversed)
+
+
+#######################################################################################
+# 8kyu rock paper scissors
+
+
+def rps(p1, p2):
+    if p1 == p2:
+        return "Draw!"
+    if (
+        (p1 == "rock" and p2 == "scissors")
+        or (p1 == "scissors" and p2 == "paper")
+        or (p1 == "paper" and p2 == "rock")
+    ):
+        return "Player 1 won!"
+    else:
+        return "Player 2 won!"
 
 
 #######################################################################################
