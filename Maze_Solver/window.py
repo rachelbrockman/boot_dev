@@ -26,15 +26,17 @@ class Window:
 
     def close(self):
         self.running = False
-    
+
+
 class Point:
     x = 0
     y = 0
+
 
 class Line:
     def __init__(self, point_1, point_2):
         self.point_1 = point_1
         self.point_2 = point_2
-    
+
     def draw(self):
-        
+        pass
