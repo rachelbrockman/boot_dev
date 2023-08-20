@@ -6,7 +6,7 @@ from tkinter import (
 
 
 class Window:
-    def __init__(self, width, height, title):
+    def __init__(self, width, height):
         self.width = width
         self.height = height
         self.root = Tk()  # create new root widget
