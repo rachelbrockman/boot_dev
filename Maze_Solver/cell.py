@@ -35,4 +35,5 @@ class Cell:
             self._win.draw_line(line)
 
     def draw_move(self, to_cell, undo=False):
-        pass
+        if self._win is None:
+            return
