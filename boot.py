@@ -1730,10 +1730,16 @@ import math
 
 #######################################################################################
 # 7kyu kata
-def xo(s):
-    x_count = s.lower().count("x")
-    o_count = s.lower().count("o")
-    return x_count == o_count
+# def xo(s):
+#     x_count = s.lower().count("x")
+#     o_count = s.lower().count("o")
+#     return x_count == o_count
 
 
 #######################################################################################
+# 6kyu kata
+def is_pangram(s):
+    alpha = set(s.ascii_lowercase)
+    sentence = s.replace(" ", "").lower()
+    unique_char = set(sentence)
+    return alpha.issubset(unique_char)
