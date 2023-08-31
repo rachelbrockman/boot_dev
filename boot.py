@@ -1739,7 +1739,14 @@ import math
 #######################################################################################
 # 6kyu kata
 def is_pangram(s):
-    alpha = set(s.ascii_lowercase)
-    sentence = s.replace(" ", "").lower()
-    unique_char = set(sentence)
-    return alpha.issubset(unique_char)
+    result = set()
+    for c in s:
+        if c.lower() in "abcdefghijklmnopqrstuvwxyz":
+            result.add(c.lower())
+
+    done = len(result) == 26
+    return done
+
+
+is_pangram("The quick, brown fox jumps over the lazy dog!")
+is_pangram("1bcdefghijklmnopqrstuvwxyz")
