@@ -1,8 +1,6 @@
-from tkinter import (
-    Tk,
-    BOTH,
-    Canvas,
-)  # how do i import tkinter>>> installed via homebrew
+from tkinter import Tk, BOTH, Canvas
+
+# how do i import tkinter>>> installed via homebrew
 
 
 class Window:
@@ -43,7 +41,7 @@ class Point:
 
 
 class Line:
-    def __init__(self, point_1, point_2):
+    def __init__(self, point_1: Point, point_2: Point):
         self.point_1 = point_1
         self.point_2 = point_2
 
